@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Justineo's Homepage</title>
+<link rel="stylesheet" href="http://fonts.useso.com/css?family=Fira+Sans:400,300">
+<style>
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+body {
+    font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    position: fixed;
+    top: 38.2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav a {
+    white-space: nowrap;
+}
+
+.primary::before,
+.primary::after {
+    display: table;
+    content: "";
+}
+
+.primary::after {
+    clear: both;
+}
+
+.primary > li {
+    float: left;
+    position: relative;
+    margin-right: 2em;
+}
+
+.primary > li > .title {
+    display: block;
+    padding: 0 1em;
+    background-color: #333;
+    color: #fff;
+    opacity: 0.4;
+    line-height: 2.5;
+    font-weight: 400;
+    cursor: pointer;
+    background-blend-mode: multiply;
+}
+
+.primary > li:hover > .title {
+    opacity: 1;
+}
+
+.primary > li::after {
+    content: "/";
+    display: block;
+    position: absolute;
+    width: 1em;
+    top: 0.75em;
+    right: -1.5em;
+    color: #999;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.primary > li:last-child::after {
+    display: none;
+}
+
+.secondary {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    font-weight: 400;
+}
+
+li:hover .secondary {
+    opacity: 1;
+    z-index: 0;
+}
+
+.secondary > li {
+    margin-top: 1px;
+    margin-right: 1px;
+    float: left;
+    clear: left;
+}
+
+.secondary a {
+    display: block;
+    padding: 0 1em;
+    line-height: 2;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.secondary a:hover {
+    background-color: #454545;
+    color: #fff;
+}
+
+footer {
+    position: fixed;
+    left: 50%;
+    bottom: 8%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    padding: 0.5em 1em;
+    color: #fff;
+    opacity: 0.4;
+    background-blend-mode: multiply;
+}
+
+footer a {
+    border-bottom: 1px solid #666;
+}
+
+footer a:hover {
+    border-bottom-color: #ccc;
+}
+</style>
+</head>
+<body>
+<nav>
+    <ul class="primary">
+        <li><a href="http://weibo.com/justineo" class="title">Weibo</a></li>
+        <li><a href="https://twitter.com/_justineo" class="title">Twitter</a></li>
+        <li><a href="https://github.com/Justineo" class="title">GitHub</span>
+</a></li>
+        <li>
+            <a class="title" href="slideshows/">Slideshows</a>
+        </li>
+        <li>
+            <a class="title" href="https://github.com/Justineo?tab=repositories">Repos …</a>
+            <ul class="secondary">
+                <li><a href="github-hovercard/">github-hovercard</a></li>
+                <li><a href="https://github.com/Justineo/coplay">coplay</a></li>
+                <li><a href="fi/">fi</a></li>
+                <li><a href="kolor/">kolor</a></li>
+                <li><a href="http://ecomfe.github.io/est/">est</a></li>
+                <li><a href="https://github.com/Justineo/spotlight">spotlight</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<footer>GU Yiling (Justineo) / Background effect powered by <a href="http://qrohlf.com/trianglify/">Trianglify</a> / <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
+<script>
+var pattern = Trianglify({
+    width: window.innerWidth,
+    height: window.innerHeight
+});
+document.body.style.backgroundImage = 'url(' + pattern.png() + ')';
+</script>
+</body>
+</html>
